@@ -1,3 +1,37 @@
-<h1>
-  {{title}}
-</h1>
+<p>
+    My current hero is {{currentHero.firstName}}
+</p>
+
+<h3>
+    {{title}}
+    <img src="{{heroImageUrl}}" style="height:30px" />
+</h3>
+
+<hr />
+
+<p>
+    The sum of 1 + 1 is {{1+1}}
+</p>
+
+<hr />
+<p>
+    The sum of 1 + 1 is not {{ 1 + 1 + getVal()}}
+</p>
+<input type="text" value="Bob" />
+
+<hr />
+<table>
+    <tr>
+        <td [attr.colspan]="1 + 1">
+            One-Two
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Five
+        </td>
+        <td>
+            Six
+        </td>
+    </tr>
+</table>
