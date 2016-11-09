@@ -1,0 +1,11 @@
+@charset 'utf-8';
+
+.curly{
+    color: #69a0d6;
+    font-size: 2em;
+}
+
+.bad{
+    color: #ccc;
+    font-size: 1em;
+}
