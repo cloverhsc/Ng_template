@@ -4,10 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SizerComponet }    from './sizer.component';
+import { BigHeroDetailComponent, HeroDetailComponent }  from './hero-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SizerComponet,
+    BigHeroDetailComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,

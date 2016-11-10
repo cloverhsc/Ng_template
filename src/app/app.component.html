@@ -39,3 +39,84 @@
 <div class="bad" [class.curly]="true">
     Bad curly
 </div>
+<hr />
+<button (click)="onAlert('hello world!')">Alert</button>
+<hr />
+<h2>Tow-Way binding</h2>
+<my-sizer [(size)] = "fontSize"></my-sizer>
+<div [style.font-size.px]="fontSize">Resizable Text</div>
+
+<hr />
+<h2>ngModel FormsModule</h2>
+<input [value]="currentHero.firstName" (ngModelChange)="currentHero.firstName=$event" />
+
+<hr />
+<h2>NgModel tow-way binding</h2>
+<h3>Result: {{currentHero.firstName}}</h3>
+<input [ngModel] = "currentHero.firstName" (ngModelChange)="currentHero.firstName=$event" />
+<br />
+<input [(ngModel)] = "currentHero.firstName" />[(ngModel)]
+<br />
+<input bindon-ngModel="currentHero.firstName" />bindon-ngModel
+<br />
+<input [ngModel]="currentHero.firstName" (ngModelChange)="currentHero.firstName=$event"/>
+(ngModelChange) = "...firstName=$event"
+<br />
+<input [(ngModel)]="currentHero.firstName" (ngModelChange)="setUpperCaseFirstName($event)"/>
+(ngModelChange) = "setUpperCaseFirstName($event)"
+
+<hr />
+<h2>ngClass.</h2>
+<div class="bad" [ngClass]="setClasses()">
+    This div is saveable and special
+</div>
+
+<hr />
+<h2>NgStyle</h2>
+<div [style.font-size]="isSpecial ? 'x-large' : 'smaller'">
+    This div is x-large.
+</div>
+
+<div [ngStyle]="setStyles()">
+    This div is italic, normal weight , and extra large(24px).
+</div>
+
+<hr />
+<h2> *Ng if</h2>
+<div *ngIf="currentHero">Hello, {{currentHero.firstName}}</div>
+
+<hr />
+<h2>NgSwitch</h2>
+<p>
+    Try to input "Eenie" or "Meanie" or "Miney" or "Moe" or other words.
+</p>
+<p>input value: {{toeChoice}}</p>
+<input [(ngModel)]="toeChoice" />
+<br />
+<span  [ngSwitch]="toeChoice">
+  <span *ngSwitchCase="'Eenie'" class="curly">Eenie</span>
+  <span *ngSwitchCase="'Meanie'" class="curly">Meanie</span>
+  <span *ngSwitchCase="'Miney'" class="curly">Miney</span>
+  <span *ngSwitchCase="'Moe'" class="curly">Moe</span>
+  <span *ngSwitchDefault class="special">Other</span>
+</span>
+
+<hr />
+<hero-detail></hero-detail>
+
+<hr />
+<h3>NgForTrackBy</h3>
+<button (click)="refreshHeroes()">Refresh heroes</button>
+<br />
+<label for="firstHero">First Hero:</label>
+<input id="firstHero" [(ngModel)]="heroes[0].firstName" />
+
+<p><i>Without</i> TrackBy</p>
+<div *ngFor="let h of heroes">
+    ({{h.id}}) {{h.fullName}}
+</div>
+
+<p>with trackBy and <i>semi-colon</i> separator</p>
+<div #withTrackBy class="box">
+  <div *ngFor="let hero of heroes; trackBy:trackByHeroes">({{hero.id}}) {{hero.fullName}}</div>
+</div>

@@ -1,11 +1,24 @@
 @charset 'utf-8';
 
+.bad{
+    color: #ccc;
+    font-size: 1em;
+}
+
 .curly{
     color: #69a0d6;
     font-size: 2em;
 }
 
-.bad{
-    color: #ccc;
-    font-size: 1em;
+.saveable{
+    background-color: #e6e6e6;
+}
+
+.modified{
+    float: right;
+}
+
+.special{
+    text-shadow: 0 0 5px #b70000;
+    font-size: 2em;
 }

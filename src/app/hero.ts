@@ -9,7 +9,7 @@ export class Hero {
       'http://www.imdb.com/title/tt0065832/',
       325),
 
-    new Hero('eenie', 'toe'),
+    new Hero('Eenie', 'toe'),
     new Hero('Meanie', 'Toe'),
     new Hero('Miny', 'Toe'),
     new Hero('Moe', 'Toe')
