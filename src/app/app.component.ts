@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgForm }   from '@angular/forms';
 import { Hero } from './hero';
 
+export function alerter(msg?: string) {
+    window.alert(msg);
+}
 
 @Component({
     selector: 'app-root',
@@ -67,4 +70,23 @@ export class AppComponent implements OnInit{
     }
 
     trackByHeroes(index: number, hero: Hero) { return hero.id; }
+
+    // Try template reference variable ~~
+    alert = alerter;
+    callPhone(value: string) {
+        this.alert(`Calling ${value}......`);
+    }
+
+    callFax(value: string) {
+        this.alert(`Faxing ${value}.....`);
+    }
+
+    // Try template reference variable in form ~~
+    onSubmit(form: NgForm) {
+        let evtMsg = form.valid ? 'Form value is' + JSON.stringify(form.value) : 'Form is invalid';
+        this.alert('Form submitted ' + evtMsg);
+    }
+
+    // Try safety navigation operator (?.) ~~
+    nullHero: Hero = null;
 }
